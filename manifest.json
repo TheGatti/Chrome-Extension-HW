@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+
+  "name": "New Ohio",
+  "description": "This extension replaces every use of the word \"Charleston\" with \"New Ohio\"",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://*/*"],
+      "js": ["popup.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
